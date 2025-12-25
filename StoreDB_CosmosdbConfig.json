@@ -1,0 +1,164 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "accountName": {
+        "type": "string"
+      },
+      "location": {
+        "type": "string",
+        "defaultValue": "West US"
+      },
+      "databaseName": {
+        "type": "string",
+        "defaultValue": "grocerydb"
+      },
+      "throughput": {
+        "type": "int",
+        "defaultValue": 400
+      }
+    },
+    "resources": [
+      {
+        "type": "Microsoft.DocumentDB/databaseAccounts",
+        "apiVersion": "2023-04-15",
+        "name": "[parameters('accountName')]",
+        "location": "[parameters('location')]",
+        "kind": "GlobalDocumentDB",
+        "properties": {
+          "databaseAccountOfferType": "Standard",
+          "locations": [
+            {
+              "locationName": "[parameters('location')]",
+              "failoverPriority": 0
+            }
+          ]
+        }
+      },
+      {
+        "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases",
+        "apiVersion": "2023-04-15",
+        "name": "[format('{0}/{1}', parameters('accountName'), parameters('databaseName'))]",
+        "dependsOn": [
+          "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('accountName'))]"
+        ],
+        "properties": {
+          "resource": {
+            "id": "[parameters('databaseName')]"
+          },
+          "options": {
+            "throughput": "[parameters('throughput')]"
+          }
+        }
+      },
+  
+        
+      {
+        "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers",
+        "apiVersion": "2023-04-15",
+        "name": "[format('{0}/{1}/store_profile', parameters('accountName'), parameters('databaseName'))]",
+        "dependsOn": [
+          "[resourceId('Microsoft.DocumentDB/databaseAccounts/sqlDatabases', parameters('accountName'), parameters('databaseName'))]"
+        ],
+        "properties": {
+          "resource": {
+            "id": "store_profile",
+            "partitionKey": {
+              "paths": ["/store_id"],
+              "kind": "Hash"
+            }
+          }
+        }
+      },
+  
+      {
+        "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers",
+        "apiVersion": "2023-04-15",
+        "name": "[format('{0}/{1}/sku_master', parameters('accountName'), parameters('databaseName'))]",
+        "dependsOn": [
+          "[resourceId('Microsoft.DocumentDB/databaseAccounts/sqlDatabases', parameters('accountName'), parameters('databaseName'))]"
+        ],
+        "properties": {
+          "resource": {
+            "id": "sku_master",
+            "partitionKey": {
+              "paths": ["/sku_id"],
+              "kind": "Hash"
+            }
+          }
+        }
+      },
+  
+      {
+        "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers",
+        "apiVersion": "2023-04-15",
+        "name": "[format('{0}/{1}/inventory_snapshot', parameters('accountName'), parameters('databaseName'))]",
+        "dependsOn": [
+          "[resourceId('Microsoft.DocumentDB/databaseAccounts/sqlDatabases', parameters('accountName'), parameters('databaseName'))]"
+        ],
+        "properties": {
+          "resource": {
+            "id": "inventory_snapshot",
+            "partitionKey": {
+              "paths": ["/sku_id"],
+              "kind": "Hash"
+            }
+          }
+        }
+      },
+  
+      {
+        "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers",
+        "apiVersion": "2023-04-15",
+        "name": "[format('{0}/{1}/pos_history', parameters('accountName'), parameters('databaseName'))]",
+        "dependsOn": [
+          "[resourceId('Microsoft.DocumentDB/databaseAccounts/sqlDatabases', parameters('accountName'), parameters('databaseName'))]"
+        ],
+        "properties": {
+          "resource": {
+            "id": "pos_history",
+            "partitionKey": {
+              "paths": ["/sku_id"],
+              "kind": "Hash"
+            }
+          }
+        }
+      },
+  
+      {
+        "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers",
+        "apiVersion": "2023-04-15",
+        "name": "[format('{0}/{1}/vendor_catalog', parameters('accountName'), parameters('databaseName'))]",
+        "dependsOn": [
+          "[resourceId('Microsoft.DocumentDB/databaseAccounts/sqlDatabases', parameters('accountName'), parameters('databaseName'))]"
+        ],
+        "properties": {
+          "resource": {
+            "id": "vendor_catalog",
+            "partitionKey": {
+              "paths": ["/vendor_id"],
+              "kind": "Hash"
+            }
+          }
+        }
+      },
+  
+      {
+        "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers",
+        "apiVersion": "2023-04-15",
+        "name": "[format('{0}/{1}/constraints', parameters('accountName'), parameters('databaseName'))]",
+        "dependsOn": [
+          "[resourceId('Microsoft.DocumentDB/databaseAccounts/sqlDatabases', parameters('accountName'), parameters('databaseName'))]"
+        ],
+        "properties": {
+          "resource": {
+            "id": "constraints",
+            "partitionKey": {
+              "paths": ["/store_id"],
+              "kind": "Hash"
+            }
+          }
+        }
+      }
+    ]
+  }
