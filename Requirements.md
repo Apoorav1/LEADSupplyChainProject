@@ -1,4 +1,5 @@
-The “Kirana” or “Independent Grocery” Store Agent
+The “Kirana” or “Independent Grocery” Store Agent - Problem statement and solution 
+
 
 Summary
 Independent grocery store market in the US is a $70B market and consisted of
