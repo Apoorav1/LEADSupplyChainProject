@@ -1,0 +1,17 @@
+{
+    "store_id": "STORE_001",
+    "store_name": "Green Valley Market",
+    "store_type": "Independent Grocery",
+    "location": {
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98109"
+    },
+    "store_size_sqft": 4500,
+    "sku_count": 1800,
+    "operating_days_per_week": 7,
+    "service_level_target": 0.95,
+    "currency": "USD"
+  }
+  
+  

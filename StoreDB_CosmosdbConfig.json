@@ -52,7 +52,8 @@
         }
       },
   
-        
+      
+  
       {
         "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers",
         "apiVersion": "2023-04-15",
