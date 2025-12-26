@@ -67,10 +67,10 @@ class FinanceExecutor(Executor):
     async def handle(self, request: str, ctx):
         response = await self.agent.run([ChatMessage(role="user", text=request)])
         
-        if "approved" in response.text.lower() or "yes" in response.text.lower():
+        if "approved" in response.messages[-1].contents[-1].text.lower() or "yes" in response.messages[-1].contents[-1].text.lower():
             await ctx.send_message("Approved: Proceed with ordering.")
         else:
-            await ctx.yield_output("Denied: " + response.text)
+            await ctx.yield_output("Denied: " + response.messages[-1].contents[-1].text)
 
 class LogisticsExecutor(Executor):
     def __init__(self, chat_client):
@@ -88,7 +88,7 @@ class LogisticsExecutor(Executor):
     async def handle(self, approval: str, ctx):
         if "Approved" in approval:
             response = await self.agent.run([ChatMessage(role="user", text="Find shipping options for SKU123 and execute the best one.")])
-            await ctx.yield_output("Logistics: " + response.text)
+            await ctx.yield_output("Logistics: " + response.messages[-1].contents[-1].text)
         else:
             await ctx.yield_output("Logistics: Approval denied, no shipment executed.")
 
