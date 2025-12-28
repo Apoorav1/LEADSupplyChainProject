@@ -1,0 +1,39 @@
+[
+    {
+      "vendor_id": "VENDOR_DAIRY_01",
+      "vendor_name": "NorthWest Dairy Supply",
+      "lead_time_days": 2,
+      "order_days": ["Mon", "Thu"],
+      "min_order_value": 150,
+      "line_items": [
+        { "sku_id": "SKU_001", "case_pack": 6, "unit_cost": 3.10 },
+        { "sku_id": "SKU_002", "case_pack": 12, "unit_cost": 3.60 },
+        { "sku_id": "SKU_009", "case_pack": 6, "unit_cost": 2.80 }
+      ]
+    },
+    {
+      "vendor_id": "VENDOR_PRODUCE_01",
+      "vendor_name": "Fresh Valley Produce",
+      "lead_time_days": 1,
+      "order_days": ["Daily"],
+      "min_order_value": 75,
+      "line_items": [
+        { "sku_id": "SKU_003", "case_pack": 10, "unit_cost": 0.45 }
+      ]
+    },
+    {
+      "vendor_id": "VENDOR_GROCERY_01",
+      "vendor_name": "Unified Grocery Distributors",
+      "lead_time_days": 4,
+      "order_days": ["Tue"],
+      "min_order_value": 250,
+      "line_items": [
+        { "sku_id": "SKU_004", "case_pack": 12, "unit_cost": 1.20 },
+        { "sku_id": "SKU_005", "case_pack": 24, "unit_cost": 0.75 },
+        { "sku_id": "SKU_006", "case_pack": 5, "unit_cost": 12.00 },
+        { "sku_id": "SKU_007", "case_pack": 12, "unit_cost": 1.80 },
+        { "sku_id": "SKU_008", "case_pack": 10, "unit_cost": 4.50 },
+        { "sku_id": "SKU_010", "case_pack": 6, "unit_cost": 4.20 }
+      ]
+    }
+  ]

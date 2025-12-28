@@ -1,0 +1,18 @@
+[
+  {
+    "planning_horizon_days": 14,
+    "cash_budget_cap": 1800,
+    "storage_constraints": {
+      "frozen_capacity_units": 60,
+      "refrigerated_capacity_units": 120
+    },
+    "spoilage_tolerance_pct": 0.05,
+    "preferred_service_level_by_category": {
+      "Dairy": 0.97,
+      "Produce": 0.98,
+      "Dry Grocery": 0.94,
+      "Snacks": 0.93,
+      "Frozen": 0.95
+    }
+  }
+]

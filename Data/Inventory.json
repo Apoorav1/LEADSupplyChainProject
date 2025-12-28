@@ -1,0 +1,12 @@
+[
+    { "sku_id": "SKU_001", "on_hand_units": 22, "on_order_units": 0 },
+    { "sku_id": "SKU_002", "on_hand_units": 18, "on_order_units": 12 },
+    { "sku_id": "SKU_003", "on_hand_units": 45, "on_order_units": 0 },
+    { "sku_id": "SKU_004", "on_hand_units": 15, "on_order_units": 0 },
+    { "sku_id": "SKU_005", "on_hand_units": 120, "on_order_units": 0 },
+    { "sku_id": "SKU_006", "on_hand_units": 20, "on_order_units": 10 },
+    { "sku_id": "SKU_007", "on_hand_units": 60, "on_order_units": 0 },
+    { "sku_id": "SKU_008", "on_hand_units": 25, "on_order_units": 0 },
+    { "sku_id": "SKU_009", "on_hand_units": 14, "on_order_units": 0 },
+    { "sku_id": "SKU_010", "on_hand_units": 30, "on_order_units": 0 }
+  ]
