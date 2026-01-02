@@ -1,0 +1,231 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iof-av: <https://spec.industrialontologies.org/ontology/annotation/> .
+@prefix iof-av1: <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/> .
+@prefix iof-cert-mod: <https://spec.industrialontologies.org/ontology/certification/Metadatacertification/> .
+@prefix iof-core-mod: <https://spec.industrialontologies.org/ontology/core/Metadatacore/> .
+@prefix iof-maintenance-mod: <https://spec.industrialontologies.org/ontology/maintenance/Metadatamaintenance/> .
+@prefix iof-pps: <https://spec.industrialontologies.org/ontology/productionplanning/Metadataproductionplanning/> .
+@prefix iof-pss: <https://spec.industrialontologies.org/ontology/productservicesystem/Metadataproductservicesystem/> .
+@prefix iof-spec: <https://spec.industrialontologies.org/ontology/MetadataIOF/> .
+@prefix iof-supplychain-mod: <https://spec.industrialontologies.org/ontology/supplychain/Metadatasupplychain/> .
+@prefix lead: <http://example.org/lead/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/lead/Constraints/0> a lead:Constraint .
+
+<http://example.org/lead/Inventory/0> a lead:Inventory .
+
+<http://example.org/lead/Inventory/1> a lead:Inventory .
+
+<http://example.org/lead/Inventory/2> a lead:Inventory .
+
+<http://example.org/lead/Inventory/3> a lead:Inventory .
+
+<http://example.org/lead/Inventory/4> a lead:Inventory .
+
+<http://example.org/lead/Inventory/5> a lead:Inventory .
+
+<http://example.org/lead/Inventory/6> a lead:Inventory .
+
+<http://example.org/lead/Inventory/7> a lead:Inventory .
+
+<http://example.org/lead/Inventory/8> a lead:Inventory .
+
+<http://example.org/lead/Inventory/9> a lead:Inventory .
+
+<http://example.org/lead/POS_History/0> a lead:PosHistory .
+
+<http://example.org/lead/POS_History/1> a lead:PosHistory .
+
+<http://example.org/lead/POS_History/2> a lead:PosHistory .
+
+<http://example.org/lead/POS_History/3> a lead:PosHistory .
+
+<http://example.org/lead/POS_History/4> a lead:PosHistory .
+
+<http://example.org/lead/POS_History/5> a lead:PosHistory .
+
+<http://example.org/lead/POS_History/6> a lead:PosHistory .
+
+<http://example.org/lead/POS_History/7> a lead:PosHistory .
+
+<http://example.org/lead/POS_History/8> a lead:PosHistory .
+
+<http://example.org/lead/POS_History/9> a lead:PosHistory .
+
+lead:SKU_001 a lead:Masterdata ;
+    rdfs:label "Whole Milk 1 Gallon" ;
+    lead:avgRetailPrice 4.99 ;
+    lead:avgUnitCost 3.1 ;
+    lead:category "Dairy" ;
+    lead:perishable true ;
+    lead:shelfLifeDays 10 ;
+    lead:unitOfMeasure "each" .
+
+lead:SKU_002 a lead:Masterdata ;
+    rdfs:label "Brown Eggs 12ct" ;
+    lead:avgRetailPrice 5.49 ;
+    lead:avgUnitCost 3.6 ;
+    lead:category "Eggs" ;
+    lead:perishable true ;
+    lead:shelfLifeDays 14 ;
+    lead:unitOfMeasure "each" .
+
+lead:SKU_003 a lead:Masterdata ;
+    rdfs:label "Bananas (lb)" ;
+    lead:avgRetailPrice 0.79 ;
+    lead:avgUnitCost 0.45 ;
+    lead:category "Produce" ;
+    lead:perishable true ;
+    lead:shelfLifeDays 5 ;
+    lead:unitOfMeasure "lb" .
+
+lead:SKU_004 a lead:Masterdata ;
+    rdfs:label "White Bread Loaf" ;
+    lead:avgRetailPrice 2.99 ;
+    lead:avgUnitCost 1.2 ;
+    lead:category "Bakery" ;
+    lead:perishable true ;
+    lead:shelfLifeDays 7 ;
+    lead:unitOfMeasure "each" .
+
+lead:SKU_005 a lead:Masterdata ;
+    rdfs:label "Canned Black Beans 15oz" ;
+    lead:avgRetailPrice 1.49 ;
+    lead:avgUnitCost 0.75 ;
+    lead:category "Dry Grocery" ;
+    lead:perishable false ;
+    lead:shelfLifeDays 730 ;
+    lead:unitOfMeasure "each" .
+
+lead:SKU_006 a lead:Masterdata ;
+    rdfs:label "Basmati Rice 10lb" ;
+    lead:avgRetailPrice 18.99 ;
+    lead:avgUnitCost 12.0 ;
+    lead:category "Dry Grocery" ;
+    lead:perishable false ;
+    lead:shelfLifeDays 1095 ;
+    lead:unitOfMeasure "each" .
+
+lead:SKU_007 a lead:Masterdata ;
+    rdfs:label "Potato Chips 8oz" ;
+    lead:avgRetailPrice 3.99 ;
+    lead:avgUnitCost 1.8 ;
+    lead:category "Snacks" ;
+    lead:perishable false ;
+    lead:shelfLifeDays 180 ;
+    lead:unitOfMeasure "each" .
+
+lead:SKU_008 a lead:Masterdata ;
+    rdfs:label "Bottled Water 24-pack" ;
+    lead:avgRetailPrice 7.99 ;
+    lead:avgUnitCost 4.5 ;
+    lead:category "Beverages" ;
+    lead:perishable false ;
+    lead:shelfLifeDays 365 ;
+    lead:unitOfMeasure "case" .
+
+lead:SKU_009 a lead:Masterdata ;
+    rdfs:label "Orange Juice 64oz" ;
+    lead:avgRetailPrice 4.99 ;
+    lead:avgUnitCost 2.8 ;
+    lead:category "Beverages" ;
+    lead:perishable true ;
+    lead:shelfLifeDays 14 ;
+    lead:unitOfMeasure "each" .
+
+lead:SKU_010 a lead:Masterdata ;
+    rdfs:label "Frozen Pizza" ;
+    lead:avgRetailPrice 7.99 ;
+    lead:avgUnitCost 4.2 ;
+    lead:category "Frozen" ;
+    lead:perishable false ;
+    lead:shelfLifeDays 365 ;
+    lead:unitOfMeasure "each" .
+
+lead:STORE_001 a lead:Store ;
+    rdfs:label "Green Valley Market" ;
+    lead:city "Seattle" ;
+    lead:currency "USD" ;
+    lead:operatingDaysPerWeek 7 ;
+    lead:postalCode "98109" ;
+    lead:serviceLevelTarget 0.95 ;
+    lead:skuCount 1800 ;
+    lead:state "WA" ;
+    lead:storeSizeSqFt 4500 ;
+    lead:storeType "Independent Grocery" .
+
+<http://example.org/lead/VendorCat/0> a lead:Vendorcat .
+
+<http://example.org/lead/VendorCat/1> a lead:Vendorcat .
+
+<http://example.org/lead/VendorCat/2> a lead:Vendorcat .
+
+<https://spec.industrialontologies.org/ontology/AboutIOFDev/> a owl:Ontology ;
+    rdfs:label "About IOF Development"@en-US ;
+    dcterms:abstract "This ontology defines the scope of development maturity level IOF ontologies." ;
+    dcterms:license "http://opensource.org/licenses/MIT"^^xsd:anyURI ;
+    dcterms:title "Industrial Ontology Foundry (IOF) Ontology - Development" ;
+    owl:imports <https://spec.industrialontologies.org/ontology/cache/CMNS/AnnotationVocabulary.rdf>,
+        <https://spec.industrialontologies.org/ontology/cache/CMNS/Collections.rdf>,
+        <https://spec.industrialontologies.org/ontology/cache/CMNS/Designators.rdf>,
+        <https://spec.industrialontologies.org/ontology/cache/CMNS/Identifiers.rdf>,
+        <https://spec.industrialontologies.org/ontology/cache/CMNS/TextDatatype.rdf>,
+        <https://spec.industrialontologies.org/ontology/cache/bfo/2020/bfo.rdf>,
+        <https://spec.industrialontologies.org/ontology/certification/Certification/>,
+        <https://spec.industrialontologies.org/ontology/core/Core/>,
+        <https://spec.industrialontologies.org/ontology/core/commonstocoremapping/MappingCommonsToIOF/>,
+        <https://spec.industrialontologies.org/ontology/core/commonstocoremapping/meta/MappingAnnotationVocabularyToCommons/>,
+        iof-av1:,
+        <https://spec.industrialontologies.org/ontology/maintenance/Maintenance/>,
+        <https://spec.industrialontologies.org/ontology/productionplanning/ProductionPlanning/>,
+        <https://spec.industrialontologies.org/ontology/productservicesystem/ProductServiceSystem/>,
+        <https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/> ;
+    owl:versionIRI <https://spec.industrialontologies.org/ontology/202502/AboutIOFDev/> ;
+    iof-av:copyright "Copyright (c) 2022, 2023, 2024, 2025 Open Applications Group" ;
+    iof-av:maturity iof-av1:Provisional .
+
+<https://spec.industrialontologies.org/ontology/AboutIOFProd/> a owl:Ontology ;
+    rdfs:label "About IOF Production"@en-US ;
+    dcterms:abstract "This ontology defines the scope of production maturity level IOF ontologies." ;
+    dcterms:license "http://opensource.org/licenses/MIT"^^xsd:anyURI ;
+    dcterms:title "Industrial Ontology Foundry (IOF) Ontology - Production" ;
+    owl:imports <https://spec.industrialontologies.org/ontology/cache/bfo/2020/bfo.rdf>,
+        <https://spec.industrialontologies.org/ontology/core/Core/>,
+        iof-av1:,
+        <https://spec.industrialontologies.org/ontology/maintenance/Maintenance/>,
+        <https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/> ;
+    owl:versionIRI <https://spec.industrialontologies.org/ontology/202502/AboutIOFProd/> ;
+    iof-av:copyright "Copyright (c) 2022, 2023, 2024, 2025 Open Applications Group" ;
+    iof-av:maturity iof-av:Released .
+
+iof-spec: a owl:Ontology ;
+    rdfs:label "Metadata for the IOF Ontology" ;
+    dcterms:abstract "The IOF Metadata Ontology describes the various modules that make up the IOF ontology library." ;
+    dcterms:issued "2023-01-20T00:00:00"^^xsd:dateTime ;
+    dcterms:license "http://opensource.org/licenses/MIT"^^xsd:anyURI ;
+    owl:imports <https://spec.industrialontologies.org/ontology/202401/productionplanning/Metadataproductionplanning/>,
+        iof-cert-mod:,
+        iof-core-mod:,
+        iof-maintenance-mod:,
+        iof-pss:,
+        iof-supplychain-mod: ;
+    owl:versionIRI <https://spec.industrialontologies.org/ontology/202502/MetadataIOF/> ;
+    iof-av1:copyright "Copyright (c) 2022, 2023, 2024, 2025 Open Applications Group" .
+
+iof-spec:IOFSpecification a sm:Specification,
+        owl:NamedIndividual ;
+    rdfs:label "IOF Specification" ;
+    dcterms:abstract "The IOF Specification comprises all metadata describing the various modules and ontologies that make up the IOF ontology library." ;
+    dcterms:hasPart iof-cert-mod:certificationModule,
+        iof-core-mod:coreModule,
+        iof-maintenance-mod:maintenanceModule,
+        iof-pps:productionPlanningModule,
+        iof-pss:productServiceSystemsModule,
+        iof-supplychain-mod:supplychainModule ;
+    dcterms:license "http://opensource.org/licenses/MIT"^^xsd:anyURI ;
+    dcterms:title "IOF Specification" .
+
